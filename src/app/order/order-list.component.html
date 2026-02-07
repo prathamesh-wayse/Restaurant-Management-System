@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let o of orders$ | async">
+      <td>{{ o.orderID }}</td>
+      <td>{{ o.customerName }}</td>
+      <td>
+        <button [routerLink]="['/orders', o.orderID]">
+          View Details
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
